@@ -1,8 +1,7 @@
 // ==UserScript==
-// @name         Krunker WheelChair
+// @name         WheelChair
 // @namespace    https://github.com/0001-1
-// @version      1.9.0
-// @description  WheelChair
+// @version      1.9.0 
 // @author       hrt x ttap x 0001-1
 // @match        https://krunker.io/*
 // @run-at       document-start
@@ -123,7 +122,7 @@ function cripple_window(_window) {
             const crouchDst = 3;
             const headScale = 2;
             const hitBoxPad = 1;
-            const armScale = 1.6;
+            const armScale = 1.3;
             const chestWidth = 2.6;
             const armInset = -.1;
             const playerScale = (2 * armScale + chestWidth + armInset) / 2;
@@ -399,12 +398,12 @@ let ty = normaliseYaw(getDir(controls.object.position.z, controls.object.positio
             for (var i = 0; i < whitespaces && whitespaces.length; i++) {
                 call_hrt += whitespaces[i];
             }
-            while (call_hrt.length < code_to_overwrite.length) {
-                call_hrt += ' ';
+            while (call_0000-1.length < code_to_overwrite.length) {
+                call_0000-1 += ' ';
             }
 
-            script = script.replace(code_to_overwrite, call_hrt);
-            conceal_string(code_to_overwrite, call_hrt);
+            script = script.replace(code_to_overwrite, call_0000-1);
+            conceal_string(code_to_overwrite, call_0000-1);
 
             /***********************************************************************************************************/
             /* Below are some misc features which I wouldn't consider bannable                                         */
