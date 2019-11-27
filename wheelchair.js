@@ -142,7 +142,7 @@ function cripple_window(_window) {
                 let g = Math.abs(b - e), h = getD3D(a, b, c, d, e, f);
                 return Math.asin(g / h) * (b > e ? -1 : 1);
             };
-
+            let load = function(x, y, z) {
             let dAngleTo = function(x, y, z) {
 let ty = normaliseYaw(getDir(controls.object.position.z, controls.object.position.x, z, x));
                 let tx = getXDire(controls.object.position.x, controls.object.position.y, controls.object.position.z, x, y, z);
@@ -157,8 +157,8 @@ let ty = normaliseYaw(getDir(controls.object.position.z, controls.object.positio
             let isCloseEnough = function(player) {let distance = calcDistanceTo(player); return me.weapon.range >= distance && ("Shotgun" != me.weapon.name || distance < 70) && ("Akimbo Uzi" != me.weapon.name || distance < 100);};
             let haveAmmo = function() {return !(me.ammos[me.weaponIndex] !== undefined && me.ammos[me.weaponIndex] == 0);};
 
-            // target selector - based on closest to aim
-            let closest = null, closestAngle = Infinity;
+            // target selector - based on farthest to aim
+            let farthest = null, farthestAngle = Infinity;
             let players = world.players.list;
             for (var i = 0; me.active && i < players.length; i++) {
                 let e = players[i];
@@ -385,21 +385,21 @@ let ty = normaliseYaw(getDir(controls.object.position.z, controls.object.positio
 
             const code_to_overwrite = script.match(/(\w+\['\w+'\]&&\(\w+\['\w+'\]=\w+\['\w+'\],!\w+\['\w+'\]&&\w+\['\w+'\]\(\w+,\w*1\)\),\w+\['\w+'\]=\w*0,\w+\['\w+'\]=\w*0),!\w+\['\w+'\]&&\w+\['\w+'\]\['push'\]\(\w+\),\w+\['\w+'\]\(\w+,\w+,!\w*1,\w+\['\w+'\]\)/)[1];
             const ttapParams = [me, inputs, world, consts, math].toString();
-            let call_hrt = `window.top['` + master_key + `'].get('hrt')(` + ttapParams + `)`;
+            let call_0001-1 = `window.top['` + master_key + `'].get('hrt')(` + ttapParams + `)`;
 
             /*
                 pad to avoid stack trace line:column number detection
                 the script will have the same length as it originally had
             */
-            if (call_hrt.length > code_to_overwrite.length) {
+            if (call_0001-1.length > code_to_overwrite.length) {
                 throw 'WHEELCHAIR: target function too small ' + [call_hrt.length, code_to_overwrite.length];
             }
             let whitespaces = code_to_overwrite.match(/\s/g);
             for (var i = 0; i < whitespaces && whitespaces.length; i++) {
                 call_hrt += whitespaces[i];
             }
-            while (call_0000-1.length < code_to_overwrite.length) {
-                call_0000-1 += ' ';
+            while (call_0001-1.length < code_to_overwrite.length) {
+                call_0001-1 += ' ';
             }
 
             script = script.replace(code_to_overwrite, call_0000-1);
