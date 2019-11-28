@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WheelChair
 // @namespace    https://github.com/0001-1
-// @version      1.9.0 
+// @version      1.8.9 
 // @author       hrt x ttap x 0001-1
 // @match        https://krunker.io/*
 // @run-at       document-start
