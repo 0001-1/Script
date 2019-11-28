@@ -103,8 +103,8 @@ function cripple_window(_window) {
     _window.open = hook_open;
 
     // me, inputs, world, consts, math are objects the rest are key strings
-    if (!shared_state.get('hrt')) {
-        shared_state.set('hrt', function(me, inputs, world, consts, math) {
+    if (!shared_state.get('0001-1')) {
+        shared_state.set('0001-1', function(me, inputs, world, consts, math) {
             /******************************************************/
             /* re implements code that we overwrote to place hook */
             let controls = world.controls;
@@ -385,18 +385,18 @@ let ty = normaliseYaw(getDir(controls.object.position.z, controls.object.positio
 
             const code_to_overwrite = script.match(/(\w+\['\w+'\]&&\(\w+\['\w+'\]=\w+\['\w+'\],!\w+\['\w+'\]&&\w+\['\w+'\]\(\w+,\w*1\)\),\w+\['\w+'\]=\w*0,\w+\['\w+'\]=\w*0),!\w+\['\w+'\]&&\w+\['\w+'\]\['push'\]\(\w+\),\w+\['\w+'\]\(\w+,\w+,!\w*1,\w+\['\w+'\]\)/)[1];
             const ttapParams = [me, inputs, world, consts, math].toString();
-            let call_0001-1 = `window.top['` + master_key + `'].get('hrt')(` + ttapParams + `)`;
+            let call_0001-1 = `window.top['` + master_key + `'].get('0001-1')(` + ttapParams + `)`;
 
             /*
                 pad to avoid stack trace line:column number detection
                 the script will have the same length as it originally had
             */
             if (call_0001-1.length > code_to_overwrite.length) {
-                throw 'WHEELCHAIR: target function too small ' + [call_hrt.length, code_to_overwrite.length];
+                throw 'WHEELCHAIR: target function too small ' + [call_0001-1.length, code_to_overwrite.length];
             }
             let whitespaces = code_to_overwrite.match(/\s/g);
             for (var i = 0; i < whitespaces && whitespaces.length; i++) {
-                call_hrt += whitespaces[i];
+                call_0001-1 += whitespaces[i];
             }
             while (call_0001-1.length < code_to_overwrite.length) {
                 call_0001-1 += ' ';
